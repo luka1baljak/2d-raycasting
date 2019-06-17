@@ -5,6 +5,9 @@ class Ray {
     this.pos = pos;
     this.dir = p5.Vector.fromAngle(angle);
   }
+  setAngle(angle) {
+    this.dir = p5.Vector.fromAngle(angle);
+  }
 
   lookAt(x, y) {
     this.dir.x = x - this.pos.x;
@@ -37,7 +40,7 @@ class Ray {
     if (den == 0) {
       return;
     }
-
+    //Formula sa linka wikipedie
     const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
     const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
 
